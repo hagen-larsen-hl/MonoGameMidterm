@@ -8,7 +8,6 @@ namespace CS5410
     public class CreditsView : GameStateView
     {
         private SpriteFont m_font;
-        private const string MESSAGE = "*I* wrote this amazing game!";
         
         public override void initialize(GraphicsDevice graphicsDevice, GraphicsDeviceManager graphics)
         {
@@ -40,13 +39,9 @@ namespace CS5410
             bottom = drawMenuItem(m_font,"GAMEPLAY", bottom, Color.Green);
             bottom = drawMenuItem(m_font, "Hagen Larsen", bottom, Color.LimeGreen);
             bottom = drawMenuItem(m_font, "IMAGES", bottom, Color.Green);
-            bottom = drawMenuItem(m_font, "Hagen Larsen", bottom, Color.LimeGreen);
-            bottom = drawMenuItem(m_font, "Spriter's Resource", bottom, Color.LimeGreen);
+            bottom = drawMenuItem(m_font, "Credit to Images Here", bottom, Color.LimeGreen);
             bottom = drawMenuItem(m_font, "SOUND", bottom, Color.Green);
-            bottom = drawMenuItem(m_font, "freesound.org", bottom, Color.LimeGreen);
-            bottom = drawMenuItem(m_font, "nebulasnails", bottom, Color.LimeGreen);
-            bottom = drawMenuItem(m_font, "peepholecircus", bottom, Color.LimeGreen);
-            bottom = drawMenuItem(m_font, "psychentist", bottom, Color.LimeGreen);
+            bottom = drawMenuItem(m_font, "Credit to Sound Here", bottom, Color.LimeGreen);
             
             m_spriteBatch.End();
         }

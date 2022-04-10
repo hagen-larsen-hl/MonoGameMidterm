@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CS5410
 {
-    public class BigBlueIsYou : Game
+    public class Midterm : Game
     {
         private static GraphicsDeviceManager m_graphics;
         private IGameState m_currentState;
@@ -19,7 +19,7 @@ namespace CS5410
         private bool loading;
         private Objects.Controls m_keyboardLayout;
 
-        public BigBlueIsYou()
+        public Midterm()
         {
             m_graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";

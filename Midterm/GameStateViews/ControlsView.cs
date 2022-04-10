@@ -199,7 +199,7 @@ namespace CS5410
 
         private void navigateUp(GameTime gameTime)
         {
-            if (!awaitKey)
+            if (!awaitKey && m_currentSelection != Selection.Up)
             {
                 m_currentSelection -= 1;
             }
@@ -207,7 +207,7 @@ namespace CS5410
 
         private void navigateDown(GameTime gameTime)
         {
-            if (!awaitKey)
+            if (!awaitKey && m_currentSelection != Selection.Fire)
             {
                 m_currentSelection += 1;
             }
@@ -242,11 +242,12 @@ namespace CS5410
             else
             {
                 float bottom = (float) (m_graphics.PreferredBackBufferHeight * 0.2);
-                bottom = drawMenuItem(m_font,"Move Up: " + m_keyboardLayout.Up, bottom, m_currentSelection == Selection.Up ? Color.SkyBlue : Color.Blue);
-                bottom = drawMenuItem(m_font, "Move Down: " + m_keyboardLayout.Down, bottom, m_currentSelection == Selection.Down ? Color.SkyBlue : Color.Blue);
-                bottom = drawMenuItem(m_font, "Move Right: " + m_keyboardLayout.Right, bottom, m_currentSelection == Selection.Right ? Color.SkyBlue : Color.Blue);
-                bottom = drawMenuItem(m_font, "Move Left: " + m_keyboardLayout.Left, bottom, m_currentSelection == Selection.Left ? Color.SkyBlue : Color.Blue);
-                drawMenuItem(m_font, "Fire: " + m_keyboardLayout.Fire, bottom, m_currentSelection == Selection.Fire ? Color.SkyBlue : Color.Blue);
+                bottom = drawMenuItem(m_font, "CUSTOMIZE CONTROLS HERE", bottom, Color.Blue);
+                bottom = drawMenuItem(m_font,"Move Up: " + m_keyboardLayout.Up, bottom, m_currentSelection == Selection.Up ? Color.LimeGreen : Color.Green);
+                bottom = drawMenuItem(m_font, "Move Down: " + m_keyboardLayout.Down, bottom, m_currentSelection == Selection.Down ? Color.LimeGreen : Color.Green);
+                bottom = drawMenuItem(m_font, "Move Right: " + m_keyboardLayout.Right, bottom, m_currentSelection == Selection.Right ? Color.LimeGreen : Color.Green);
+                bottom = drawMenuItem(m_font, "Move Left: " + m_keyboardLayout.Left, bottom, m_currentSelection == Selection.Left ? Color.LimeGreen : Color.Green);
+                drawMenuItem(m_font, "Fire: " + m_keyboardLayout.Fire, bottom, m_currentSelection == Selection.Fire ? Color.LimeGreen : Color.Green);
 
             }
             m_spriteBatch.End();
