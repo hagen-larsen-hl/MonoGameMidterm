@@ -5,12 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e03ca4b-32d0-4d73-9668-7699a9274048" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Midterm.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Midterm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Midterm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Content/Content.mgcb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/ControlsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/ControlsView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/GamePlayView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/GamePlayView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/GameStateEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/GameStateEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/MainMenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/MainMenuView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/Midterm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Midterm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/Midterm.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Midterm.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/Objects/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Objects/Controls.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46965cb9a5869a335ffeff724715bdd91ed3213c1a4214642c8e452ec2edec/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3d61bcba5bfd78784ba3f5567867e07a334c6a4b1cb9ccb2d79f1bfd7bd/Thread.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/76ae208c70c9959873b3e4232d4a3d6c3b8cb687c4b33ec731c8c1c69b4ae2/XmlSerializer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -24,6 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.49496645" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -55,7 +77,9 @@
       <option name="presentableId" value="Default" />
       <updated>1649561964358</updated>
       <workItem from="1649561980665" duration="161000" />
-      <workItem from="1649562167795" duration="1129000" />
+      <workItem from="1649562167795" duration="1438000" />
+      <workItem from="1650132664344" duration="72000" />
+      <workItem from="1650132751788" duration="18119000" />
     </task>
     <servers />
   </component>

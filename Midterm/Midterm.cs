@@ -3,6 +3,7 @@ using System.IO;
 using System.IO.IsolatedStorage;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using CS5410.Particles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -39,7 +40,7 @@ namespace CS5410
             m_states = new Dictionary<GameStateEnum, IGameState>();
             m_states.Add(GameStateEnum.MainMenu, new MainMenuView());
             m_states.Add(GameStateEnum.GamePlay, new GamePlayView());
-            m_states.Add(GameStateEnum.Help, new ControlsView());
+            m_states.Add(GameStateEnum.HighScores, new HighScoresView());
             m_states.Add(GameStateEnum.About, new CreditsView());
             
             // Load default game controls
@@ -127,11 +128,7 @@ namespace CS5410
                         else
                         {
                             m_keyboardLayout = new Objects.Controls();
-                            m_keyboardLayout.Up = Keys.Up;
-                            m_keyboardLayout.Down = Keys.Down;
-                            m_keyboardLayout.Left = Keys.Left;
-                            m_keyboardLayout.Right = Keys.Right;
-                            m_keyboardLayout.Fire = Keys.Space;
+                            m_keyboardLayout.Particle = Keys.T;
                         }
                     }
                     catch (IsolatedStorageException)

@@ -6,19 +6,11 @@ namespace CS5410.Objects
     {
         public Controls() { }
 
-        public Controls(Keys up, Keys down, Keys left, Keys right, Keys fire)
+        public Controls(Keys particle)
         {
-            Up = up;
-            Down = down; 
-            Left = left;
-            Right = right;
-            Fire = fire;
+            Particle = particle;
         }
         
-        public Keys Up { get; set; }
-        public Keys Down { get; set; }
-        public Keys Right { get; set; }
-        public Keys Left { get; set; }
-        public Keys Fire { get; set; }
+        public Keys Particle { get; set; }
     }
 }

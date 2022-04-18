@@ -19,8 +19,8 @@ namespace CS5410
         private enum MenuState
         {
             NewGame,
-            Help,
-            About,
+            HighScores,
+            Credits,
             Quit
         }
 
@@ -72,11 +72,11 @@ namespace CS5410
             {
                 m_currentView = GameStateEnum.GamePlay;
             }
-            if (m_currentSelection == MenuState.Help)
+            if (m_currentSelection == MenuState.HighScores)
             {
-                m_currentView = GameStateEnum.Help;
+                m_currentView = GameStateEnum.HighScores;
             }
-            if (m_currentSelection == MenuState.About)
+            if (m_currentSelection == MenuState.Credits)
             {
                 m_currentView = GameStateEnum.About;
             }
@@ -99,8 +99,8 @@ namespace CS5410
                 "New Game",
                 200, 
                 m_currentSelection == MenuState.NewGame ? Color.LimeGreen : Color.Green);
-            bottom = drawMenuItem(m_currentSelection == MenuState.Help ? m_fontMenuSelect : m_fontMenu, "Controls", bottom, m_currentSelection == MenuState.Help ? Color.LimeGreen : Color.Green);
-            bottom = drawMenuItem(m_currentSelection == MenuState.About ? m_fontMenuSelect : m_fontMenu, "Credits", bottom, m_currentSelection == MenuState.About ? Color.LimeGreen : Color.Green);
+            bottom = drawMenuItem(m_currentSelection == MenuState.HighScores ? m_fontMenuSelect : m_fontMenu, "High Scores", bottom, m_currentSelection == MenuState.HighScores ? Color.LimeGreen : Color.Green);
+            bottom = drawMenuItem(m_currentSelection == MenuState.Credits ? m_fontMenuSelect : m_fontMenu, "Credits", bottom, m_currentSelection == MenuState.Credits ? Color.LimeGreen : Color.Green);
             drawMenuItem(m_currentSelection == MenuState.Quit ? m_fontMenuSelect : m_fontMenu, "Quit", bottom, m_currentSelection == MenuState.Quit ? Color.LimeGreen : Color.Green);
 
             m_spriteBatch.End();

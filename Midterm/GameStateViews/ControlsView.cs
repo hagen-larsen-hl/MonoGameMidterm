@@ -24,14 +24,10 @@ namespace CS5410
 
         private enum Selection
         {
-            Up,
-            Down,
-            Right,
-            Left,
-            Fire
+            Particle,
         }
 
-        private Selection m_currentSelection = Selection.Up;
+        private Selection m_currentSelection = Selection.Particle;
         
         public override void initialize(GraphicsDevice graphicsDevice, GraphicsDeviceManager graphics)
         {
@@ -132,11 +128,7 @@ namespace CS5410
                         else
                         {
                             m_keyboardLayout = new Objects.Controls();
-                            m_keyboardLayout.Up = Keys.Up;
-                            m_keyboardLayout.Down = Keys.Down;
-                            m_keyboardLayout.Left = Keys.Left;
-                            m_keyboardLayout.Right = Keys.Right;
-                            m_keyboardLayout.Fire = Keys.Space;
+                            m_keyboardLayout.Particle = Keys.E;
                         }
                     }
                     catch (IsolatedStorageException)
@@ -169,27 +161,10 @@ namespace CS5410
                 // set to m_currentSelection
                 Keys key = Keyboard.GetState().GetPressedKeys()[0];
 
-                if (m_currentSelection == Selection.Up)
+                if (m_currentSelection == Selection.Particle)
                 {
-                    m_keyboardLayout.Up = key;
+                    m_keyboardLayout.Particle = key;
                 }
-                if (m_currentSelection == Selection.Down)
-                {
-                    m_keyboardLayout.Down = key;
-                }
-                if (m_currentSelection == Selection.Right)
-                {
-                    m_keyboardLayout.Right = key;
-                }
-                if (m_currentSelection == Selection.Left)
-                {
-                    m_keyboardLayout.Left = key;
-                }
-                if (m_currentSelection == Selection.Fire)
-                {
-                    m_keyboardLayout.Fire = key;
-                }
-                Console.Write("Saving" + m_keyboardLayout.Fire);
                 saveLayout(m_keyboardLayout);
                 awaitKey = false;
             }
@@ -199,7 +174,7 @@ namespace CS5410
 
         private void navigateUp(GameTime gameTime)
         {
-            if (!awaitKey && m_currentSelection != Selection.Up)
+            if (!awaitKey && m_currentSelection != Selection.Particle)
             {
                 m_currentSelection -= 1;
             }
@@ -207,7 +182,7 @@ namespace CS5410
 
         private void navigateDown(GameTime gameTime)
         {
-            if (!awaitKey && m_currentSelection != Selection.Fire)
+            if (!awaitKey && m_currentSelection != Selection.Particle)
             {
                 m_currentSelection += 1;
             }
@@ -243,11 +218,7 @@ namespace CS5410
             {
                 float bottom = (float) (m_graphics.PreferredBackBufferHeight * 0.2);
                 bottom = drawMenuItem(m_font, "CUSTOMIZE CONTROLS HERE", bottom, Color.Blue);
-                bottom = drawMenuItem(m_font,"Move Up: " + m_keyboardLayout.Up, bottom, m_currentSelection == Selection.Up ? Color.LimeGreen : Color.Green);
-                bottom = drawMenuItem(m_font, "Move Down: " + m_keyboardLayout.Down, bottom, m_currentSelection == Selection.Down ? Color.LimeGreen : Color.Green);
-                bottom = drawMenuItem(m_font, "Move Right: " + m_keyboardLayout.Right, bottom, m_currentSelection == Selection.Right ? Color.LimeGreen : Color.Green);
-                bottom = drawMenuItem(m_font, "Move Left: " + m_keyboardLayout.Left, bottom, m_currentSelection == Selection.Left ? Color.LimeGreen : Color.Green);
-                drawMenuItem(m_font, "Fire: " + m_keyboardLayout.Fire, bottom, m_currentSelection == Selection.Fire ? Color.LimeGreen : Color.Green);
+                bottom = drawMenuItem(m_font,"Emit Particle: " + m_keyboardLayout.Particle, bottom, m_currentSelection == Selection.Particle ? Color.LimeGreen : Color.Green);
 
             }
             m_spriteBatch.End();

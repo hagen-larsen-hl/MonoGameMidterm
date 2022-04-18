@@ -4,7 +4,7 @@
     {
         MainMenu,
         GamePlay,
-        Help,
+        HighScores,
         About,
         Exit,
     }
