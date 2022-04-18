@@ -15,6 +15,7 @@ namespace CS5410
         private SpriteFont m_fontMenu;
         private SpriteFont m_fontMenuSelect;
         private KeyboardInput m_inputHandler;
+        private Texture2D m_background;
 
         private enum MenuState
         {
@@ -42,6 +43,7 @@ namespace CS5410
         {
             m_fontMenu = contentManager.Load<SpriteFont>("Fonts/Font");
             m_fontMenuSelect = contentManager.Load<SpriteFont>("Fonts/Font");
+            m_background = contentManager.Load<Texture2D>("Textures/background");
         }
         public override GameStateEnum processInput(GameTime gameTime)
         {
@@ -92,16 +94,27 @@ namespace CS5410
         public override void render(GameTime gameTime)
         {
             m_spriteBatch.Begin();
+            
+            m_spriteBatch.Draw(
+                m_background,
+                new Rectangle(
+                    0, 0, m_graphics.PreferredBackBufferWidth, m_graphics.PreferredBackBufferHeight),
+                null,
+                Color.White,
+                0,
+                new Vector2(0, 0),
+                SpriteEffects.None,
+                0);
 
             // I split the first one's parameters on separate lines to help you see them better
             float bottom = drawMenuItem(
                 m_currentSelection == MenuState.NewGame ? m_fontMenuSelect : m_fontMenu, 
                 "New Game",
                 200, 
-                m_currentSelection == MenuState.NewGame ? Color.LimeGreen : Color.Green);
-            bottom = drawMenuItem(m_currentSelection == MenuState.HighScores ? m_fontMenuSelect : m_fontMenu, "High Scores", bottom, m_currentSelection == MenuState.HighScores ? Color.LimeGreen : Color.Green);
-            bottom = drawMenuItem(m_currentSelection == MenuState.Credits ? m_fontMenuSelect : m_fontMenu, "Credits", bottom, m_currentSelection == MenuState.Credits ? Color.LimeGreen : Color.Green);
-            drawMenuItem(m_currentSelection == MenuState.Quit ? m_fontMenuSelect : m_fontMenu, "Quit", bottom, m_currentSelection == MenuState.Quit ? Color.LimeGreen : Color.Green);
+                m_currentSelection == MenuState.NewGame ? Color.White : Color.Green);
+            bottom = drawMenuItem(m_currentSelection == MenuState.HighScores ? m_fontMenuSelect : m_fontMenu, "High Scores", bottom, m_currentSelection == MenuState.HighScores ? Color.White : Color.Green);
+            bottom = drawMenuItem(m_currentSelection == MenuState.Credits ? m_fontMenuSelect : m_fontMenu, "Credits", bottom, m_currentSelection == MenuState.Credits ? Color.White : Color.Green);
+            drawMenuItem(m_currentSelection == MenuState.Quit ? m_fontMenuSelect : m_fontMenu, "Quit", bottom, m_currentSelection == MenuState.Quit ? Color.White : Color.Green);
 
             m_spriteBatch.End();
         }

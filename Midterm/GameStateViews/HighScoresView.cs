@@ -15,6 +15,7 @@ namespace CS5410
         private bool loading;
         private List<int> scores;
         private SpriteFont m_font;
+        private Texture2D m_background;
         
         public override void initialize(GraphicsDevice graphicsDevice, GraphicsDeviceManager graphics)
         {
@@ -27,6 +28,7 @@ namespace CS5410
         public override void loadContent(ContentManager contentManager)
         {
             m_font = contentManager.Load<SpriteFont>("Fonts/Font");
+            m_background = contentManager.Load<Texture2D>("Textures/background");
         }
         
         private void loadScores()
@@ -85,12 +87,22 @@ namespace CS5410
         public override void render(GameTime gameTime)
         {
             m_spriteBatch.Begin();
+            m_spriteBatch.Draw(
+                m_background,
+                new Rectangle(
+                    0, 0, m_graphics.PreferredBackBufferWidth, m_graphics.PreferredBackBufferHeight),
+                null,
+                Color.White,
+                0,
+                new Vector2(0, 0),
+                SpriteEffects.None,
+                0);
             m_spriteBatch.DrawString(m_font, "HIGH SCORES",
                 new Vector2(m_graphics.PreferredBackBufferWidth / 2 - m_font.MeasureString("HIGH SCORES").X / 2, m_graphics.PreferredBackBufferHeight / 8), Color.White);
             float bottom = (float) (m_graphics.PreferredBackBufferHeight * 0.2);
             for (int i = 0; i < 5; i++)
             {
-                bottom = drawMenuItem(m_font, (i + 1) + ": " + scores[i], bottom, Color.SkyBlue);
+                bottom = drawMenuItem(m_font, (i + 1) + ": " + scores[i], bottom, Color.Green);
             }
             m_spriteBatch.End();
         }

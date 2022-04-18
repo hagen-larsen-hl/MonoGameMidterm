@@ -8,6 +8,7 @@ namespace CS5410
     public class CreditsView : GameStateView
     {
         private SpriteFont m_font;
+        private Texture2D m_background;
         
         public override void initialize(GraphicsDevice graphicsDevice, GraphicsDeviceManager graphics)
         {
@@ -18,6 +19,7 @@ namespace CS5410
         public override void loadContent(ContentManager contentManager)
         {
             m_font = contentManager.Load<SpriteFont>("Fonts/Font");
+            m_background = contentManager.Load<Texture2D>("Textures/background");
         }
 
         public override GameStateEnum processInput(GameTime gameTime)
@@ -34,14 +36,23 @@ namespace CS5410
         {
             m_spriteBatch.Begin();
             
+            m_spriteBatch.Draw(
+                m_background,
+                new Rectangle(
+                    0, 0, m_graphics.PreferredBackBufferWidth, m_graphics.PreferredBackBufferHeight),
+                null,
+                Color.White,
+                0,
+                new Vector2(0, 0),
+                SpriteEffects.None,
+                0);
+            
             float bottom = (float) (m_graphics.PreferredBackBufferHeight * 0.1);
             bottom = drawMenuItem(m_font, "CREDITS", bottom, Color.White);
-            bottom = drawMenuItem(m_font,"GAMEPLAY", bottom, Color.Green);
-            bottom = drawMenuItem(m_font, "Hagen Larsen", bottom, Color.LimeGreen);
-            bottom = drawMenuItem(m_font, "IMAGES", bottom, Color.Green);
-            bottom = drawMenuItem(m_font, "Credit to Images Here", bottom, Color.LimeGreen);
-            bottom = drawMenuItem(m_font, "SOUND", bottom, Color.Green);
-            bottom = drawMenuItem(m_font, "Credit to Sound Here", bottom, Color.LimeGreen);
+            bottom = drawMenuItem(m_font," ", bottom, Color.Green);
+            bottom = drawMenuItem(m_font,"DEVELOPED BY:", bottom, Color.Green);
+            bottom = drawMenuItem(m_font, "Hagen Larsen", bottom, Color.White);
+            
             
             m_spriteBatch.End();
         }

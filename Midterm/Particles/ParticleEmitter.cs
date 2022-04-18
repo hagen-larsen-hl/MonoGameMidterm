@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using CS5410.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,12 +12,10 @@ namespace CS5410.Particles
     {
 
         public Dictionary<int, Particle> m_particles = new Dictionary<int, Particle>();
-        private Texture2D m_texSnowflake;
         private CustomRandom m_random = new CustomRandom();
 
         private TimeSpan m_rate;
-        private int m_sourceX;
-        private int m_sourceY;
+        private Rectangle m_region;
         private int m_sarticleSize;
         private int m_speed;
         private TimeSpan m_lifetime;
@@ -25,19 +25,16 @@ namespace CS5410.Particles
 
         public Vector2 Gravity { get; set; }
 
-        public ParticleEmitter(ContentManager content, TimeSpan lifeRemaining, TimeSpan rate, int sourceX, int sourceY, int size, int speed, TimeSpan lifetime, TimeSpan wwitchover)
+        public ParticleEmitter(ContentManager content, TimeSpan lifeRemaining, TimeSpan rate, Rectangle region, int size, int speed, TimeSpan lifetime, TimeSpan wwitchover)
         {
             m_lifeRemaining = lifeRemaining;
             m_rate = rate;
-            m_sourceX = sourceX;
-            m_sourceY = sourceY;
+            m_region = region;
             m_sarticleSize = size;
             m_speed = speed;
             m_lifetime = lifetime;
             m_switchover = wwitchover;
-
-            m_texSnowflake = content.Load<Texture2D>("Textures/snowflake");
-
+            
             this.Gravity = new Vector2(0, 0);
         }
 
@@ -46,13 +43,13 @@ namespace CS5410.Particles
         /// </summary>
         public void update(GameTime gameTime)
         {
-            m_lifeRemaining -= gameTime.ElapsedGameTime;
+            // m_lifeRemaining -= gameTime.ElapsedGameTime;
             //
             // Generate particles at the specified rate
-            if (m_lifeRemaining > TimeSpan.Zero)
-            {
-                addParticles(gameTime);
-            }
+            // if (m_lifeRemaining > TimeSpan.Zero)
+            // {
+                // addParticles(gameTime);
+            // }
             
             //
             // For any existing particles, update them, if we find ones that have expired, add them
@@ -69,49 +66,47 @@ namespace CS5410.Particles
             foreach (Particle p in m_particles.Values)
             {
                 Texture2D texDraw;
-                if (p.lifetime < m_switchover)
-                {
-                    texDraw = m_texSnowflake;
-                }
-                else
-                {
-                    texDraw = m_texSnowflake;
-                }
 
                 r.X = (int)p.position.X;
                 r.Y = (int)p.position.Y;
                 spriteBatch.Draw(
-                    texDraw,
+                    p.texture,
                     r,
                     null,
                     Color.White,
                     p.rotation,
-                    new Vector2(texDraw.Width / 2, texDraw.Height / 2),
+                    new Vector2(p.texture.Width / 2, p.texture.Height / 2),
                     SpriteEffects.None,
                     0);
             }
         }
 
-        private void addParticles(GameTime gameTime)
+        public void addParticles(GameTime gameTime, Texture2D tex, Rectangle region)
         {
+            m_region = region;
             m_accumulated += gameTime.ElapsedGameTime;
-            while (m_accumulated > m_rate)
+            // while (m_accumulated > m_rate)
+            for (int i = 0; i < 300; i++)
             {
                 m_accumulated -= m_rate;
 
                 // Particle p = new Particle(
-                    // m_random.Next(),
-                    // new Vector2(m_sourceX, m_sourceY),
-                    // m_random.nextCircleVector(),
-                    // (float)m_random.nextGaussian(m_speed, 1),
-                    // m_lifetime);
+                // m_random.Next(),
+                // new Vector2(m_sourceX, m_sourceY),
+                // m_random.nextCircleVector(),
+                // (float)m_random.nextGaussian(m_speed, 1),
+                // m_lifetime);
 
                 Particle p = new Particle(
-                    m_random.Next(),
-                    new Vector2(m_random.Next(0, 1000), 0),
-                    new Vector2((float)0, (float)1),
-                    m_random.Next(2, 10),
-                    new TimeSpan(0, 0, 0, 2)
+                    i,
+                    new Vector2(
+                        m_random.Next(m_region.Left, m_region.Right),
+                        m_random.Next(m_region.Top, m_region.Bottom)
+                    ),
+                    new Vector2(m_random.nextRange(-1, 1), m_random.nextRange(-1, 1)),
+                    m_random.Next(1, 2),
+                    new TimeSpan(0, 0, 0, 0, m_random.Next(0, 1000)),
+                    tex
                 );
 
                 if (!m_particles.ContainsKey(p.name))
@@ -119,6 +114,7 @@ namespace CS5410.Particles
                     m_particles.Add(p.name, p);
                 }
             }
+
         }
 
         private void updateParticles(GameTime gameTime)

@@ -6,11 +6,14 @@ namespace CS5410.Objects
     {
         public Controls() { }
 
-        public Controls(Keys particle)
+        public Controls(Keys hit, Keys newGame)
         {
-            Particle = particle;
+            Hit = hit;
+            New = newGame;
         }
         
-        public Keys Particle { get; set; }
+        public Keys Hit { get; set; }
+        
+        public Keys New { get; set; }
     }
 }

@@ -16,8 +16,6 @@ namespace CS5410
         private IGameState m_currentState;
         private GameStateEnum m_nextStateEnum = GameStateEnum.MainMenu;
         private Dictionary<GameStateEnum, IGameState> m_states;
-        private bool saving;
-        private bool loading;
         private Objects.Controls m_keyboardLayout;
 
         public Midterm()
@@ -42,9 +40,6 @@ namespace CS5410
             m_states.Add(GameStateEnum.GamePlay, new GamePlayView());
             m_states.Add(GameStateEnum.HighScores, new HighScoresView());
             m_states.Add(GameStateEnum.About, new CreditsView());
-            
-            // Load default game controls
-            loadLayout();
 
             // We are starting with the main menu
             m_currentState = m_states[GameStateEnum.MainMenu];
@@ -52,94 +47,7 @@ namespace CS5410
             base.Initialize();
         }
         
-        private void saveLayout(Objects.Controls layout)
-        {
-            lock (this)
-            {
-                if (!this.saving)
-                {
-                    this.saving = true;
-                    //
-                    finalizeSaveAsync(layout);
-                }
-            }
-        }
         
-        private async void finalizeSaveAsync(Objects.Controls layout)
-        {
-            await Task.Run(() =>
-            {
-                using (IsolatedStorageFile storage = IsolatedStorageFile.GetUserStoreForApplication())
-                {
-                    try
-                    {
-                        using (IsolatedStorageFileStream fs = storage.OpenFile("layout.xml", FileMode.OpenOrCreate))
-                        {
-                            if (fs != null)
-                            {
-                                XmlSerializer mySerializer = new XmlSerializer(typeof(Objects.Controls));
-                                mySerializer.Serialize(fs, layout);
-                            }
-                        }
-                    }
-                    catch (IsolatedStorageException)
-                    {
-                        // Ideally show something to the user, but this is demo code :)
-                    }
-                }
-
-                this.saving = false;
-            });
-        }
-        
-        private void loadLayout()
-        {
-            lock (this)
-            {
-                if (!this.loading)
-                {
-                    this.loading = true;
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                    finalizeLoadAsync();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                }
-            }
-        }
-
-        private async Task finalizeLoadAsync()
-        {
-            await Task.Run(() =>
-            {
-                using (IsolatedStorageFile storage = IsolatedStorageFile.GetUserStoreForApplication())
-                {
-                    try
-                    {
-                        if (storage.FileExists("layout.xml"))
-                        {
-                            using (IsolatedStorageFileStream fs = storage.OpenFile("layout.xml", FileMode.Open))
-                            {
-                                if (fs != null)
-                                {
-                                    XmlSerializer mySerializer = new XmlSerializer(typeof(Objects.Controls));
-                                    m_keyboardLayout = (Objects.Controls)mySerializer.Deserialize(fs);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            m_keyboardLayout = new Objects.Controls();
-                            m_keyboardLayout.Particle = Keys.T;
-                        }
-                    }
-                    catch (IsolatedStorageException)
-                    {
-                        // Ideally show something to the user, but this is demo code :)
-                    }
-                }
-                saveLayout(m_keyboardLayout);
-                this.loading = false;
-            });
-        }
 
         protected override void LoadContent()
         {
@@ -174,7 +82,7 @@ namespace CS5410
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.Gray);
 
             m_currentState.render(gameTime);
 

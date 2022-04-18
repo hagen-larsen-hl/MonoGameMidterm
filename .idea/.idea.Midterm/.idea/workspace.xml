@@ -7,13 +7,17 @@
     <list default="true" id="7e03ca4b-32d0-4d73-9668-7699a9274048" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Midterm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Midterm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Midterm/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Content/Content.mgcb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/ControlsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/ControlsView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/Content/Textures/snowflake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/ControlsView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/CreditsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/CreditsView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/GamePlayView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/GamePlayView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/GameStateEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/GameStateEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/HighScoresView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/HighScoresView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/MainMenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/MainMenuView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Midterm/Midterm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Midterm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/Midterm.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Midterm.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Midterm/Objects/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Objects/Controls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/Particles/Particle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Particles/Particle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/Particles/ParticleEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Particles/ParticleEmitter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Midterm/Particles/ParticleSystem.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +33,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef0f4f575d6c4c21bfc710db8f2f75c618b800/85/d4734a16/Game.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46965cb9a5869a335ffeff724715bdd91ed3213c1a4214642c8e452ec2edec/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3d61bcba5bfd78784ba3f5567867e07a334c6a4b1cb9ccb2d79f1bfd7bd/Thread.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/76ae208c70c9959873b3e4232d4a3d6c3b8cb687c4b33ec731c8c1c69b4ae2/XmlSerializer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -46,6 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="XThreadsFramesViewSplitterKey" value="0.49496645" />
+    <property name="settings.editor.selected.configurable" value="RiderCSharpLiveTemplatesSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -80,6 +86,7 @@
       <workItem from="1649562167795" duration="1438000" />
       <workItem from="1650132664344" duration="72000" />
       <workItem from="1650132751788" duration="18119000" />
+      <workItem from="1650242822123" duration="16281000" />
     </task>
     <servers />
   </component>
@@ -102,5 +109,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Midterm/Particles/ParticleEmitter.cs</url>
+          <line>117</line>
+          <properties documentPath="$PROJECT_DIR$/Midterm/Particles/ParticleEmitter.cs" initialLine="117" containingFunctionPresentation="method 'addParticles'">
+            <startOffsets>
+              <option value="3983" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3984" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Midterm/GameStateViews/GamePlayView.cs</url>
+          <line>160</line>
+          <properties documentPath="$PROJECT_DIR$/Midterm/GameStateViews/GamePlayView.cs" initialLine="159" containingFunctionPresentation="lambda expression inside method 'loadScoresAsync'">
+            <startOffsets>
+              <option value="5660" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5697" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
