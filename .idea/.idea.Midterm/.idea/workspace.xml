@@ -6,18 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e03ca4b-32d0-4d73-9668-7699a9274048" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Midterm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Midterm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Content/Content.mgcb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/Content/Textures/snowflake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/ControlsView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/CreditsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/CreditsView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/GamePlayView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/GamePlayView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/HighScoresView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/HighScoresView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/GameStateViews/MainMenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/GameStateViews/MainMenuView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/Midterm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Midterm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/Objects/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Objects/Controls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/Particles/Particle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Particles/Particle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/Particles/ParticleEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Midterm/Particles/ParticleEmitter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Midterm/Particles/ParticleSystem.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +74,8 @@
       <workItem from="1649562167795" duration="1438000" />
       <workItem from="1650132664344" duration="72000" />
       <workItem from="1650132751788" duration="18119000" />
-      <workItem from="1650242822123" duration="16281000" />
+      <workItem from="1650242822123" duration="19584000" />
+      <workItem from="1650730625409" duration="2292000" />
     </task>
     <servers />
   </component>
