@@ -11,3 +11,7 @@ Features I'm most proud of:
 ## Build Instructions
 1. Install Visual Studio
 2. Run the `.sln` file in the root directory
+
+## Gameplay Images
+![Gameplay](docs/gameplay.png)
+![Menu](docs/menu.png)
